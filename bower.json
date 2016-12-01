@@ -1,0 +1,18 @@
+{
+  "name": "website",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Ilan <apps@calaverse.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/iKnowMagic/website",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
