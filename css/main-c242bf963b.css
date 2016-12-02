@@ -262,7 +262,7 @@ th {
   padding: 0;
 }
 
-/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main-6cdee9c4c5.css */
+/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main-c242bf963b.css */
 @media print {
   /* line 9, /home/codio/workspace/bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_print.scss */
   *,
@@ -9115,9 +9115,9 @@ body {
   background: rgba(255, 255, 255, 0.8);
   width: 500px;
   margin: 200px auto;
-  padding: 40px 40px 60px;
+  padding: 20px 20px 30px;
   text-align: center;
 }
 
 
-/*# sourceMappingURL=../maps/css/main-6cdee9c4c5.css.map */
+/*# sourceMappingURL=../maps/css/main-c242bf963b.css.map */
