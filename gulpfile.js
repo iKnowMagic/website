@@ -14,6 +14,25 @@ var options = {
   local: 'local_files'
 };
 
+gulp.task('sass', function() {
+  return gulp.src(options.dev + '/scss/*.scss')
+    .pipe($.plumber())
+    .pipe($.sassGlobImport())
+    .pipe($.sourcemaps.init())
+    .pipe($.sass.sync({
+      outputStyle: 'expanded',
+      precision: 10,
+      sourceComments: true,
+      includePaths: ['.', 'bower_components']
+    }).on('error', $.sass.logError))
+    .pipe($.autoprefixer({browsers: ['last 2 versions']}))
+    .pipe($.tap(function(file, t) {
+      file.contents = new Buffer(file.contents.toString().replace(/(\* line [0-9]+\, )(\/.*)(\/scss.*\*\/)/g, '$1..$3'));
+    }))
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest(options.tmp + '/css'));
+});
+
 gulp.task('img', function() {
   return gulp.src(options.dev + '/img/**/*')
     .pipe($.plumber())
@@ -42,7 +61,7 @@ gulp.task('inject', function() {
   .pipe(gulp.dest(options.tmp));
 });
 
-gulp.task('html', ['img', 'fonts'], function() {  
+gulp.task('html', ['sass', 'img', 'fonts'], function() {  
   return gulp.src(options.tmp + '/*.html')
     .pipe($.plumber())
     .pipe($.eol())
@@ -118,4 +137,24 @@ gulp.task('serve', ['build'], function() {
 
   gulp.watch(options.dev + '/img/**/*', ['img']).on('change', reload);
   gulp.watch(options.dev + '/fonts/**/*', ['fonts']).on('change', reload);
+});
+
+gulp.task('copy-files', function() {
+  return gulp.src(options.dev + '/CNAME')
+    .pipe($.changed(options.dist))
+    .pipe(gulp.dest(options.dist));
+});
+
+gulp.task('publish', function() {
+  return gulp.src(["./app/**/*"])
+    .pipe($.ghPages());
+});
+
+gulp.task('deploy', function(callback) {
+  runSequence(
+    'build',
+    'copy-files',
+    'publish',
+    callback
+  );
 });
