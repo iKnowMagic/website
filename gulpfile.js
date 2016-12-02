@@ -140,7 +140,7 @@ gulp.task('serve', ['build'], function() {
 });
 
 gulp.task('copy-files', function() {
-  return gulp.src(options.dev + '/CNAME')
+  return gulp.src('CNAME')
     .pipe($.changed(options.dist))
     .pipe(gulp.dest(options.dist));
 });
