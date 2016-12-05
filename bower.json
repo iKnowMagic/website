@@ -3,7 +3,7 @@
   "description": "",
   "main": "index.js",
   "authors": [
-    "Ilan <apps@calaverse.com>"
+    "Ilan <ilan@iknowmagic.net>"
   ],
   "license": "ISC",
   "homepage": "https://github.com/iKnowMagic/website",
@@ -16,6 +16,12 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap-sass": "^3.3.7"
+    "bootstrap-sass": "^3.3.7",
+    "vue": "^2.1.4",
+    "lodash": "^4.17.2",
+    "axios": "^0.15.3",
+    "vue-router": "^2.1.1",
+    "vue-resource": "^1.0.3",
+    "vuex": "^2.0.0"
   }
 }

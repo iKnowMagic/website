@@ -51,9 +51,10 @@ gulp.task('clean', del.bind(null, [options.tmp, options.dist]));
 
 gulp.task('inject', function() {
   gulp.src(options.dev + '/index.html')
-  .pipe($.inject(gulp.src([
+  .pipe($.inject(gulp.src([    
     options.dev + '/partials/**/*.js',
-    options.tmp + '/partials/**/*.js',
+    options.tmp + '/partials/**/*.js',    
+    '!'+options.dev + '/partials/app.js'
   ], {read: false}), {relative: true}))
   .pipe($.tap(function(file, t) {
     file.contents = new Buffer(file.contents.toString().replace(/\.\.\/\.tmp\//g, ''));
@@ -71,7 +72,7 @@ gulp.task('html', ['sass', 'img', 'fonts'], function() {
     lazypipe().pipe($.sourcemaps.init, { loadMaps: true })))
   
     // .pipe($.if('*/main.js', $.ngAnnotate()))
-    // .pipe($.if('*/main.js', $.uglify())) //$.uglify({mangle: false})
+    // .pipe($.if('*/vendor.js', $.uglify())) //$.uglify({mangle: false})
 
     .pipe($.if('*.js', $.rev()))
     .pipe($.if('*.css', $.rev()))

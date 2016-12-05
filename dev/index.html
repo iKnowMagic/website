@@ -7,18 +7,28 @@
   <!-- build:css css/main.css -->
   <link rel="stylesheet" href="css/main.css">
   <!-- endbuild -->
+  
+  <!-- build:js js/vendor.js -->
+  <script src="/bower_components/vue/dist/vue.js"></script>
+  <script src="/bower_components/lodash/dist/lodash.min.js"></script>
+  <script src="/bower_components/axios/dist/axios.min.js"></script>
+  <script src="/bower_components/vue-router/dist/vue-router.min.js"></script>
+  <!-- endbuild -->  
+</head> 
 
+<body>
+  <div class="content" id="app">
+  <h1></h1>
+   <main-component></main-component>
+  </div>
+  
+  
   <!-- build:js js/main.js -->
   <!-- inject:js -->
   <!-- endinject -->
+  
+  <script src="partials/app.js"></script>
   <!-- endbuild -->
-</head>
-
-<body>
-  <div class="content">
-  <h1></h1>
-   <p>All I see is magic.</p> 
-  </div>
 </body>
 
 </html>

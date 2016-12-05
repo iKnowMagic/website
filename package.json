@@ -11,7 +11,7 @@
     "url": "git+https://github.com/iKnowMagic/website.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "ilan@iknowmagic.net",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/iKnowMagic/website/issues"
@@ -38,6 +38,7 @@
     "gulp-sass-glob-import": "^0.1.0",
     "gulp-sourcemaps": "^1.9.1",
     "gulp-tap": "^0.1.3",
+    "gulp-uglify": "^2.0.0",
     "gulp-useref": "^3.1.2",
     "lazypipe": "^1.0.1",
     "run-sequence": "^1.2.2"
