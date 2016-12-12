@@ -4,31 +4,40 @@
 <head>
   <meta charset="UTF-8">
   <title>iknowmagic</title>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Fira+Sans">
+
   <!-- build:css css/main.css -->
   <link rel="stylesheet" href="css/main.css">
   <!-- endbuild -->
-  
+
   <!-- build:js js/vendor.js -->
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
   <script src="/bower_components/vue/dist/vue.js"></script>
   <script src="/bower_components/lodash/dist/lodash.min.js"></script>
   <script src="/bower_components/axios/dist/axios.min.js"></script>
   <script src="/bower_components/vue-router/dist/vue-router.min.js"></script>
-  <!-- endbuild -->  
-</head> 
+  <!-- endbuild -->
+</head>
 
 <body>
   <div class="content" id="app">
-  <h1></h1>
    <main-component></main-component>
   </div>
-  
-  
+  <canvas id="fog"></canvas>
+  <canvas id="pixie"></canvas>
+
+
   <!-- build:js js/main.js -->
   <!-- inject:js -->
   <!-- endinject -->
-  
+
   <script src="partials/app.js"></script>
   <!-- endbuild -->
+
+  <script>
+  fog();
+  fireflies();
+  </script>
 </body>
 
 </html>
