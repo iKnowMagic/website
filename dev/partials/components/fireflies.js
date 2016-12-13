@@ -5,7 +5,7 @@ function fireflies() {
     var con;
     var g;
     var pxs = new Array();
-    var rint = 50;
+    var rint = 60;
 
     $(document).ready(function() {
         WIDTH = window.innerWidth;
@@ -14,7 +14,7 @@ function fireflies() {
         canvas = document.getElementById('pixie');
         $(canvas).attr('width', WIDTH).attr('height', HEIGHT);
         con = canvas.getContext('2d');
-        for (var i = 0; i < 50; i++) {
+        for (var i = 0; i < 40; i++) {
             pxs[i] = new Circle();
             pxs[i].reset();
         }
