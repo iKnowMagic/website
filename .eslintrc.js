@@ -16,5 +16,7 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['sonarjs', 'vue', 'prettier'],
-  rules: {}
+  rules: {
+    'vue/multi-word-component-names': 'off'
+  }
 }
