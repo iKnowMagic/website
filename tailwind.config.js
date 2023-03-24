@@ -6,7 +6,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: defaultTheme.colors.green
+        primary: defaultTheme.colors.green,
+        'white-rgba': 'rgba(255, 255, 255, 0.8)'
+      },
+      fontFamily: {
+        sans: ['"Roboto Slab"']
       }
     }
   },
