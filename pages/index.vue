@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // @ts-expect-error
-import backgroundImage from '@/assets/tree.png'
+import backgroundImage from '@/assets/background2.png'
 </script>
 
 <template>
